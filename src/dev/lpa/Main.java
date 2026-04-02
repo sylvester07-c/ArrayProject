@@ -15,12 +15,31 @@ public class Main {
         return  numbers;
     }
 
+    public static int[] sortedIntegers(int[] randomNumbers) {
+        int[] sortedArrays = Arrays.copyOf(randomNumbers, randomNumbers.length);
+
+        boolean flag = true;
+        int temp;
+        while (flag){
+            flag = false;
+            for(int i = 0; i < sortedArrays.length - 1; i++){
+                if(sortedArrays[i] < sortedArrays[i + 1]){
+                    temp = sortedArrays[i];
+                    sortedArrays[i] = sortedArrays[i + 1];
+                    sortedArrays[i + 1] = temp;
+                    flag = true;
+                }
+            }
+        }
+        return  sortedArrays;
+    }
+
 
 
     public static void main(String[] args) {
 
-        int[] numbers = randomArray(10);
-        Arrays.sort(numbers);
+        int[] randomNumbers = randomArray(10);
+        Arrays.sort(randomNumbers);
 
 //        int[] arrays = randomNumberArray(10);
 //        System.out.println(Arrays.toString(arrays));
