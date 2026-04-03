@@ -40,9 +40,12 @@ public class Main {
 
         int[] randomNumbers = randomArray(10);
         Arrays.sort(randomNumbers);
+        System.out.println(Arrays.toString(randomNumbers));
+        int[] sorted = sortedIntegers(randomNumbers);
+        System.out.println(Arrays.toString(sorted));
 
-//        int[] arrays = randomNumberArray(10);
-//        System.out.println(Arrays.toString(arrays));
+        int[] arrays = randomNumberArray(10);
+        System.out.println(Arrays.toString(arrays));
 
 //        int[] integerArray = new int[10];
 //        integerArray[5] = 50;
@@ -55,7 +58,7 @@ public class Main {
 //        for (int i = 0; i < num.length; i++) {
 //            System.out.println(num[i]);
 //        }
-////        System.out.println(num);
+//        System.out.println(num);
 //        for(int element : num) {
 //                System.out.print(element + " ");
 //        }
