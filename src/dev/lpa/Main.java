@@ -2,6 +2,7 @@ package dev.lpa;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
@@ -17,6 +18,7 @@ public class Main {
 
     public static int[] sortedIntegers(int[] randomNumbers) {
         int[] sortedArrays = Arrays.copyOf(randomNumbers, randomNumbers.length);
+
 
         boolean flag = true;
         int temp;
@@ -34,18 +36,31 @@ public class Main {
         return  sortedArrays;
     }
 
+    public static int[] getInteger(int len) {
+
+        int[] arrayNumbers = new int[len];
+        for (int i = 0; i < len; i++) {
+            Scanner scanner = new Scanner(System.in);
+            String num = scanner.nextLine();
+            arrayNumbers[i] = Integer.parseInt(num);
+        }
+
+        return arrayNumbers;
+
+
+    }
 
 
     public static void main(String[] args) {
+        System.out.println(getInteger(10));
+//        int[] randomNumbers = randomArray(10);
+//        Arrays.sort(randomNumbers);
+//        System.out.println(Arrays.toString(randomNumbers));
+//        int[] sorted = sortedIntegers(randomNumbers);
+//        System.out.println(Arrays.toString(sorted));
 
-        int[] randomNumbers = randomArray(10);
-        Arrays.sort(randomNumbers);
-        System.out.println(Arrays.toString(randomNumbers));
-        int[] sorted = sortedIntegers(randomNumbers);
-        System.out.println(Arrays.toString(sorted));
-
-        int[] arrays = randomNumberArray(10);
-        System.out.println(Arrays.toString(arrays));
+//        int[] arrays = randomNumberArray(10);
+//        System.out.println(Arrays.toString(arrays));
 
 //        int[] integerArray = new int[10];
 //        integerArray[5] = 50;
