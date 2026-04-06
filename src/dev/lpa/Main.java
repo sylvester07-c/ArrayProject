@@ -16,24 +16,16 @@ public class Main {
             return value;
         }
 
-        public static int[] readElements(int value) {
-
-                Scanner scanner = new Scanner(System.in);
-                int count = 0;
-                int[] values = new int[value];
-                while(count < value) {
-                    System.out.println("Enter " + value + " number of integers: ");
-                    String numbers = scanner.nextLine();
-
-                    String[] splits = numbers.split(",");
-                     values = new int[splits.length];
-                    for (int i = 0; i < splits.length; i++) {
-                        values[i] = Integer.parseInt(splits[i].trim());
-                    }
-                    count++;
-                }
-
-                    return values;
+        public static int[] getElement(int value) {
+            Scanner scanner = new Scanner(System.in);
+            int[] values = new int[value];
+            for(int i = 0; i < value; i++) {
+                System.out.println("Enter " + value + " Integer numbers:");
+                String numbers = scanner.nextLine();
+                int num = Integer.parseInt(numbers);
+                values[i] = num;
+            }
+             return  values;
 
         }
 
@@ -50,12 +42,12 @@ public class Main {
 
 
     public static void main(String[] args) {
-            int value = readIntegers();
-            int[] arr = readElements(value);
+//            int value = readIntegers();
+//            int[] arr = readElements(5);
 
 
-            System.out.println(Arrays.toString(readElements(value)));
-            System.out.println("Min value is: " + findMin(arr));
+            System.out.println(Arrays.toString(getElement(5)));
+//            System.out.println("Min value is: " + findMin(arr));
 
 
     }
