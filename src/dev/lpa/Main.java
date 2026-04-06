@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import javax.lang.model.util.Elements;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -19,7 +20,7 @@ public class Main {
         public static int[] getElement(int value) {
             Scanner scanner = new Scanner(System.in);
             int[] values = new int[value];
-            for(int i = 0; i < value; i++) {
+            for(int i = 0; i < values.length; i++) {
                 System.out.println("Enter " + value + " Integer numbers:");
                 String numbers = scanner.nextLine();
                 int num = Integer.parseInt(numbers);
@@ -32,7 +33,7 @@ public class Main {
         public static int findMin(int[] arr) {
             int min = arr[0];
             for(int i = 0; i < arr.length; i++) {
-                if(i < min) {
+                if(arr[i] < min) {
                     min = i;
                 }
             }
@@ -43,11 +44,12 @@ public class Main {
 
     public static void main(String[] args) {
 //            int value = readIntegers();
-//            int[] arr = readElements(5);
+            int[] arr = getElement(5);
 
 
-            System.out.println(Arrays.toString(getElement(5)));
-//            System.out.println("Min value is: " + findMin(arr));
+
+            System.out.println(Arrays.toString(arr));
+            System.out.println("Min value is: " + findMin(arr));
 
 
     }
