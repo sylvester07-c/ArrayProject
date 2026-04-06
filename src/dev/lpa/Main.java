@@ -29,6 +29,7 @@ public class Main {
                     for (int i = 0; i < splits.length; i++) {
                         values[i] = Integer.parseInt(splits[i].trim());
                     }
+                    count++;
                 }
 
                     return values;
