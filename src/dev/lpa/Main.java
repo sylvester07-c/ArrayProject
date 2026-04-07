@@ -6,8 +6,6 @@ import java.util.Scanner;
 
 public class Main {
 
-
-
         public static int readIntegers() {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter the number of elements you wish to enter? ");
@@ -41,16 +39,40 @@ public class Main {
             return min;
         }
 
+        public static void reverse(int[] array) {
+            int maxIndex = array.length - 1;
+            int halfLength = array.length / 2;
+
+            for(int i = 0; i < halfLength; i++) {
+                int temp = array[i];
+                array[i] = array[maxIndex - i];
+                array[maxIndex - i] = temp;
+            }
+
+            System.out.println("-->" + Arrays.toString(array));
+        }
+
+
+
 
     public static void main(String[] args) {
 //            int value = readIntegers();
-            int[] arr = getElement(5);
+//            int[] arr = getElement(5);
 
 
 
-            System.out.println(Arrays.toString(arr));
-            System.out.println("Min value is: " + findMin(arr));
+//            System.out.println(Arrays.toString(arr));
+//            System.out.println("Min value is: " + findMin(arr));
+            int[] arrs = new int[]{1,2,3,4,5};
+            System.out.println(Arrays.toString(arrs));
+            reverse(arrs);
 
+            int[][] array = new int[4][5];
+            System.out.println(Arrays.deepToString(array));
+
+            for(int i = 0; i < array.length; i++){
+
+            }
 
     }
 }
