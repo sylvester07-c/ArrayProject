@@ -1,10 +1,19 @@
 package dev.lpa;
 
 import javax.lang.model.util.Elements;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+
+    record  GroceryItem(String name, String type, int count) {
+        public GroceryItem(String name) {
+            this(name, "diary", 6);
+
+        }
+
+    }
 
         public static int readIntegers() {
             Scanner scanner = new Scanner(System.in);
@@ -56,13 +65,20 @@ public class Main {
 
 
     public static void main(String[] args) {
-//            int value = readIntegers();
-//            int[] arr = getElement(5);
+
+        GroceryItem[] groceryItems = new GroceryItem[3];
+
+        groceryItems[0] = new GroceryItem("milk");
+        groceryItems[1] = new GroceryItem("apples", "produce", 6);
+        groceryItems[2] = new GroceryItem("oranges", "produce", 5);
+
+        System.out.println(Arrays.toString(groceryItems));
+
+        ArrayList<GroceryItem> objectList = new ArrayList<GroceryItem>();
+        objectList.add(new GroceryItem("Butter"));
+        objectList.add(new GroceryItem("Yogurt", "produce", 7));
 
 
-
-//            System.out.println(Arrays.toString(arr));
-//            System.out.println("Min value is: " + findMin(arr));
             int[] arrs = new int[]{1,2,3,4,5};
             System.out.println(Arrays.toString(arrs));
             reverse(arrs);
@@ -73,17 +89,19 @@ public class Main {
             for(int i = 0; i < array.length; i++){
                 var innerArray = array[i];
                 for(int j = 0; j < innerArray.length; j++){
+                    array[i][j] = (i * 10) + (j + 1);
                     System.out.print(array[i][j] + " ");
                 }
                 System.out.println();
 
             }
 
-            for(var outer : array){
-                for(var element : outer) {
-                    System.out.println(element + " ");
-                }
-            }
+//            for(var outer : array){
+//                for(var element : outer) {
+//                    System.out.println(element + " ");
+//                }
+//                System.out.println();
+//            }
 
     }
 }
