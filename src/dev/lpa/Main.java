@@ -71,7 +71,18 @@ public class Main {
             System.out.println(Arrays.deepToString(array));
 
             for(int i = 0; i < array.length; i++){
+                var innerArray = array[i];
+                for(int j = 0; j < innerArray.length; j++){
+                    System.out.print(array[i][j] + " ");
+                }
+                System.out.println();
 
+            }
+
+            for(var outer : array){
+                for(var element : outer) {
+                    System.out.println(element + " ");
+                }
             }
 
     }
