@@ -103,9 +103,14 @@ public class Main {
                     if (groceries.isEmpty()) {
                         System.out.println("There is nothing in your list to remove from");
                     }
-                    System.out.println("Enter the Item you wish to remove from the list :");
+                    System.out.println("Enter the index of the Item you wish to remove from the list :");
                     String removedItem = scanner.nextLine();
-                    groceries.remove(removedItem);
+                    switch(removedItem) {
+                        case "0" -> groceries.remove(0);
+                        case  "1" -> groceries.remove(1);
+                        case "2" -> groceries.remove(2);
+                    }
+                    System.out.println(groceries);
                 }
                 default -> flag = false;
             }
