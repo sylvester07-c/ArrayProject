@@ -3,6 +3,7 @@ package dev.lpa;
 import javax.lang.model.util.Elements;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -92,25 +93,30 @@ public class Main {
             System.out.println("Enter number 0 to quit 1 to add an Item and 2 to remove an Item:");
             String input = scanner.nextLine();
             switch (input) {
-                case "0" -> System.out.println("Shutdown");
+                case "0" -> {
+                    System.out.println("Shutdown");
+                    break;
+                }
                 case "1" -> {
                     System.out.println("Enter the Item you wish to add to the list");
-                    String item = scanner.nextLine();
-                    groceries.add(item);
+                    String[] item = scanner.nextLine().split(",");
+                    groceries.addAll(List.of(item));
                     System.out.println(groceries);
                 }
                 case "2" -> {
                     if (groceries.isEmpty()) {
                         System.out.println("There is nothing in your list to remove from");
+                    } else {
+                        System.out.println(groceries);
+                        System.out.println("Enter the index of the Item you wish to remove from the list :");
+                        String removedItem = scanner.nextLine();
+                        switch (removedItem) {
+                            case "0" -> groceries.remove(0);
+                            case "1" -> groceries.remove(1);
+                            case "2" -> groceries.remove(2);
+                        }
+                        System.out.println(groceries);
                     }
-                    System.out.println("Enter the index of the Item you wish to remove from the list :");
-                    String removedItem = scanner.nextLine();
-                    switch(removedItem) {
-                        case "0" -> groceries.remove(0);
-                        case  "1" -> groceries.remove(1);
-                        case "2" -> groceries.remove(2);
-                    }
-                    System.out.println(groceries);
                 }
                 default -> flag = false;
             }
