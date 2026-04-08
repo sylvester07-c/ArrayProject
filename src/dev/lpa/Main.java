@@ -84,6 +84,25 @@ public class Main {
         System.out.println(objectList);
 
 
+        ArrayList<String> groceries = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        switch (input) {
+            case "0" -> System.out.println("Shutdown");
+            case "1" -> {
+                System.out.println("Enter the Item you wish to add to the list");
+                String item = scanner.nextLine();
+                groceries.set(0, item);
+            }
+            case "2" -> {
+                System.out.println("Enter the Item you wish to remove from the list :");
+                String removedItem = scanner.nextLine();
+                groceries.remove(removedItem);
+            }
+            default ->  System.out.println("Enter 0,1,2 for functionality");
+        }
+
+
 
             int[] arrs = new int[]{1,2,3,4,5};
             System.out.println(Arrays.toString(arrs));
