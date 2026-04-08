@@ -86,40 +86,49 @@ public class Main {
 
         ArrayList<String> groceries = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        switch (input) {
-            case "0" -> System.out.println("Shutdown");
-            case "1" -> {
-                System.out.println("Enter the Item you wish to add to the list");
-                String item = scanner.nextLine();
-                groceries.set(0, item);
+
+        boolean flag = true;
+        while (flag) {
+            System.out.println("Enter number 0 to quit 1 to add an Item and 2 to remove an Item:");
+            String input = scanner.nextLine();
+            switch (input) {
+                case "0" -> System.out.println("Shutdown");
+                case "1" -> {
+                    System.out.println("Enter the Item you wish to add to the list");
+                    String item = scanner.nextLine();
+                    groceries.add(item);
+                    System.out.println(groceries);
+                }
+                case "2" -> {
+                    if (groceries.isEmpty()) {
+                        System.out.println("There is nothing in your list to remove from");
+                    }
+                    System.out.println("Enter the Item you wish to remove from the list :");
+                    String removedItem = scanner.nextLine();
+                    groceries.remove(removedItem);
+                }
+                default -> flag = false;
             }
-            case "2" -> {
-                System.out.println("Enter the Item you wish to remove from the list :");
-                String removedItem = scanner.nextLine();
-                groceries.remove(removedItem);
-            }
-            default ->  System.out.println("Enter 0,1,2 for functionality");
         }
 
 
-
-            int[] arrs = new int[]{1,2,3,4,5};
-            System.out.println(Arrays.toString(arrs));
-            reverse(arrs);
-
-            int[][] array = new int[4][5];
-            System.out.println(Arrays.deepToString(array));
-
-            for(int i = 0; i < array.length; i++){
-                var innerArray = array[i];
-                for(int j = 0; j < innerArray.length; j++){
-                    array[i][j] = (i * 10) + (j + 1);
-                    System.out.print(array[i][j] + " ");
-                }
-                System.out.println();
-
-            }
+//
+//            int[] arrs = new int[]{1,2,3,4,5};
+//            System.out.println(Arrays.toString(arrs));
+//            reverse(arrs);
+//
+//            int[][] array = new int[4][5];
+//            System.out.println(Arrays.deepToString(array));
+//
+//            for(int i = 0; i < array.length; i++){
+//                var innerArray = array[i];
+//                for(int j = 0; j < innerArray.length; j++){
+//                    array[i][j] = (i * 10) + (j + 1);
+//                    System.out.print(array[i][j] + " ");
+//                }
+//                System.out.println();
+//
+//            }
 
 //            for(var outer : array){
 //                for(var element : outer) {
