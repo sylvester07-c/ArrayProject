@@ -74,9 +74,15 @@ public class Main {
 
         System.out.println(Arrays.toString(groceryItems));
 
+
         ArrayList<GroceryItem> objectList = new ArrayList<GroceryItem>();
         objectList.add(new GroceryItem("Butter"));
         objectList.add(new GroceryItem("Yogurt", "produce", 7));
+        objectList.add(new GroceryItem("banana"));
+        System.out.println(objectList);
+        objectList.remove(2);
+        System.out.println(objectList);
+
 
 
             int[] arrs = new int[]{1,2,3,4,5};
