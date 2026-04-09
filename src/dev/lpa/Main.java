@@ -1,10 +1,7 @@
 package dev.lpa;
 
 import javax.lang.model.util.Elements;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -41,11 +38,12 @@ public class Main {
                 Available actions:
                 0 - to shutdown
                 
-                1 - to add item 
+                1 - to add item(s) to list(comma delimited list)
                 
-                2 - to remove item 
-                """;
-        System.out.println(textBlock);
+                2 - to remove item (comma delimited list)
+                
+                Enter a number for which action you want to take:""";
+        System.out.println(textBlock + " ");
     }
 
         public static int readIntegers() {
@@ -126,6 +124,8 @@ public class Main {
                  default -> flag = false;
 
              }
+             groceries.sort(Comparator.naturalOrder());
+             System.out.println(groceries);
         }
 
 
