@@ -109,7 +109,7 @@ public class Main {
                     } else {
                         System.out.println(groceries);
                         System.out.println("Enter the index of the Item you wish to remove from the list :");
-                        String removedItem = scanner.nextLine();
+                        String[] removedItem = scanner.nextLine().split(",");
                         switch (removedItem) {
                             case "0" -> groceries.remove(0);
                             case "1" -> groceries.remove(1);
