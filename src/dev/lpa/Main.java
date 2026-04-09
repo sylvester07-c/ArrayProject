@@ -21,7 +21,7 @@ public class Main {
 
     public static void addItems(ArrayList<String> groceries) {
         System.out.println("Add item(s) [separate items by comma]:");
-        String[] items = scanner.nextLine().spilt(",");
+        String[] items = scanner.nextLine().split(",");
     }
 
     public static void removeItem(ArrayList<String> groceries) {
@@ -123,7 +123,7 @@ public class Main {
         while (flag) {
              printActions();
              switch(Integer.parseInt(scanner.nextLine())) {
-                 case 1 ->
+                 default -> flag = false;
 
              }
         }
