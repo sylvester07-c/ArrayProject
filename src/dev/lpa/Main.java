@@ -16,6 +16,18 @@ public class Main {
 
     }
 
+    public static void removeItem(ArrayList<String> groceries) {
+        System.out.println("Remove item(s) [separate items by comma]:");
+        String[] items = scanner.nextLine().split(",");
+
+        for(String i : items) {
+            String trimmed = i.trim();
+
+            groceries.remove(trimmed);
+        }
+
+    }
+
         public static int readIntegers() {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter the number of elements you wish to enter? ");
