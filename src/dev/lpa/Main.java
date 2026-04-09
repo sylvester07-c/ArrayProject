@@ -37,7 +37,12 @@ public class Main {
         for(String i : items) {
             String trimmed = i.trim();
 
-            groceries.remove(trimmed);
+            if(groceries.contains(trimmed)){
+                groceries.remove(trimmed);
+
+            }else  {
+                System.out.println("Item not contained in list!");
+            }
         }
 
     }
@@ -131,6 +136,7 @@ public class Main {
              printActions();
              switch(Integer.parseInt(scanner.nextLine())) {
                  case 1 -> addItems(groceries);
+                 case 2 -> removeItem(groceries);
                  default -> flag = false;
 
              }
