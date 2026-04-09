@@ -16,6 +16,10 @@ public class Main {
 
     }
 
+    public static void addItems(ArrayList<String> groceries) {
+        System.out.println("Add item(s) [separate items by comma]:")
+    }
+
     public static void removeItem(ArrayList<String> groceries) {
         System.out.println("Remove item(s) [separate items by comma]:");
         String[] items = scanner.nextLine().split(",");
@@ -26,6 +30,18 @@ public class Main {
             groceries.remove(trimmed);
         }
 
+    }
+
+    public static  void printActions() {
+        String textBlock = """
+                Available actions:
+                0 - to shutdown
+                
+                1 - to add item 
+                
+                2 - to remove item 
+                """;
+        System.out.println(textBlock);
     }
 
         public static int readIntegers() {
