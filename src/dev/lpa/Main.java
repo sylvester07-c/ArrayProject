@@ -19,8 +19,16 @@ public class Main {
     public static void addItems(ArrayList<String> groceries) {
         System.out.println("Add item(s) [separate items by comma]:");
         String[] items = scanner.nextLine().split(",");
-        groceries.addAll(List.of(items));
+//        groceries.addAll(List.of(items));
+
+        for(String i : items){
+            String trimmed = i.trim();
+            if(groceries.indexOf(trimmed) < 0){
+                groceries.add(trimmed);
+            }
+        }
     }
+
 
     public static void removeItem(ArrayList<String> groceries) {
         System.out.println("Remove item(s) [separate items by comma]:");
