@@ -19,6 +19,7 @@ public class Main {
     public static void addItems(ArrayList<String> groceries) {
         System.out.println("Add item(s) [separate items by comma]:");
         String[] items = scanner.nextLine().split(",");
+        groceries.addAll(List.of(items));
     }
 
     public static void removeItem(ArrayList<String> groceries) {
@@ -121,6 +122,7 @@ public class Main {
         while (flag) {
              printActions();
              switch(Integer.parseInt(scanner.nextLine())) {
+                 case 1 -> addItems(groceries);
                  default -> flag = false;
 
              }
